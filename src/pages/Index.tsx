@@ -44,11 +44,37 @@ const Index = () => {
 
   return (
     <div className="min-h-screen flex flex-col relative">
-      {/* Full viewport background with HEERO theme */}
+      {/* HEERO Minibus background image */}
       <div
         className="fixed inset-0 z-0 w-screen h-screen"
         style={{
-          background: "linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #dbeafe 100%)",
+          backgroundImage: `url('/uploads/heero-minibus-background.jpg')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+        }}
+      />
+      
+      {/* Blue overlay for brand consistency and readability */}
+      <div
+        className="fixed inset-0 z-1 w-screen h-screen"
+        style={{
+          background: `
+            linear-gradient(135deg, rgba(30, 64, 175, 0.5) 0%, rgba(59, 130, 246, 0.4) 50%, rgba(219, 234, 254, 0.3) 100%)
+          `,
+        }}
+      />
+      
+      {/* Subtle geometric pattern overlay for texture */}
+      <div
+        className="fixed inset-0 z-2 w-screen h-screen opacity-15"
+        style={{
+          backgroundImage: `
+            radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.3) 1px, transparent 1px),
+            radial-gradient(circle at 75% 75%, rgba(255, 255, 255, 0.2) 1px, transparent 1px)
+          `,
+          backgroundSize: '100px 100px, 150px 150px',
+          backgroundPosition: '0 0, 50px 50px',
         }}
       />
 

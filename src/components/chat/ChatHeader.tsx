@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 
 const ChatHeader = () => {
   return (
-    <header className="fixed top-0 left-0 right-0 z-100 p-4 md:p-4 px-2 md:px-4 flex justify-between items-center background-[color:var(--transparent-10)] backdrop-blur-md">
+    <header className="fixed top-0 left-0 right-0 z-100 p-4 md:p-4 px-2 md:px-4 flex justify-between items-center bg-black/20 backdrop-blur-md border-b border-white/10">
       <div className="flex items-center">
         <a
           href="https://www.heero-motors.de/"
@@ -13,10 +13,10 @@ const ChatHeader = () => {
           rel="noopener noreferrer"
         >
           <div className="flex items-center gap-2">
-            <div className="text-lg md:text-xl font-bold text-[color:var(--primary-blue)]">
+            <div className="text-lg md:text-xl font-bold text-white drop-shadow-lg">
               HEERO
             </div>
-            <div className="text-sm md:text-base text-[color:var(--neutral-grey)] font-medium">
+            <div className="text-sm md:text-base text-white/80 font-medium drop-shadow-lg">
               Motors
             </div>
           </div>
