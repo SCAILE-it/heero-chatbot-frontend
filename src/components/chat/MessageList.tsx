@@ -20,13 +20,13 @@ export type Message = {
   html?: string; // Optional HTML content for the message (AI)
   sources?: { title: string; url: string }[]; // Optional sources for the message, each with a title and URL
   ctaType?:
-    | "gutachten"
-    | "termin"
-    | "makler"
-    | "finanzrechner"
-    | "anwalt"
-    | "ibuyer"
-    | "sanierer"; // Optional CTA type for specific message actions
+    | "probefahrt"
+    | "beratung"
+    | "angebot"
+    | "produkte"
+    | "ebusse"
+    | "etransporter"
+    | "foerderung"; // Optional CTA type for specific message actions
 };
 
 // Represents a file attached to a message

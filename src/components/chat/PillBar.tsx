@@ -25,7 +25,7 @@ const PillBar = ({ pills, onPillClick }: PillBarProps) => {
         <Button
           key={index}
           variant="outline"
-          className="rounded-full text-sm bg-[color:var(--secondary-lightyellow)] backdrop-blur-md hover:bg-[color:var(--primary-yellow)] text-[color:var(--neutral-dark)] whitespace-nowrap"
+          className="rounded-full text-sm bg-[color:var(--secondary-lightblue)] backdrop-blur-md hover:bg-[color:var(--secondary-accent)] text-[color:var(--neutral-dark)] hover:text-white whitespace-nowrap"
           onClick={() => onPillClick(pill)}
         >
           <span className="truncate max-w-[70vw] md:max-w-none" title={pill}>

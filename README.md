@@ -1,6 +1,16 @@
-# Heero Chatbot Frontend
+# HEERO Motors Chatbot Frontend
 
-Frontend für den AI-gestützten Immobilien-Chatbot von Heero. Entwickelt mit React + Vite + TailwindCSS.
+Frontend für den AI-gestützten eMobilität-Chatbot von HEERO Motors. Entwickelt mit React + Vite + TailwindCSS.
+
+## Über HEERO Motors
+
+HEERO Motors elektrifiziert Nutzfahrzeugflotten durch Diesel-to-Electric Umrüstungen und neue Elektrofahrzeuge. Unser Chatbot hilft bei Fragen zu:
+
+- eTransporter und eBusse
+- Reichweite und Ladeinfrastruktur  
+- Förderungen und Finanzierung
+- Flottenelektrifizierung
+- CO2-Einsparungen
 
 ## Setup
 

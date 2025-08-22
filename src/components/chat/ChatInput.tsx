@@ -16,7 +16,7 @@ type ChatInputProps = {
 const ChatInput = ({
   onSendMessage,
   disabled = false,
-  placeholder = "Tippen Sie hier...",
+  placeholder = "Fragen Sie uns zu eMobilität...",
   value = "",
   onChange,
   onFileButtonClick,
@@ -68,7 +68,7 @@ const ChatInput = ({
         onKeyDown={handleKeyDown}
         placeholder={placeholder}
         disabled={disabled}
-        className="w-full resize-none bg-transparent focus:outline-none text-md placeholder-[color:var(--transparent-50)] text-[color:var(--primary-creme)] min-h-[48px] max-h-[150px]"
+        className="w-full resize-none bg-transparent focus:outline-none text-md placeholder-[color:var(--neutral-grey)] text-[color:var(--neutral-dark)] min-h-[48px] max-h-[150px]"
         rows={1}
       />
 
@@ -86,9 +86,9 @@ const ChatInput = ({
           >
             <Paperclip
               size={18}
-              className="text-[color:var(--primary-creme)]"
+              className="text-[color:var(--neutral-dark)]"
             />
-            <span className="text-[color:var(--primary-creme)] text-sm">
+            <span className="text-[color:var(--neutral-dark)] text-sm">
               Dokumente hochladen
             </span>
           </Button>
@@ -99,11 +99,11 @@ const ChatInput = ({
               className="rounded-full border-none flex items-center justify-center"
               aria-label="Datenschutzhinweis"
             >
-              <Info size={16} className="text-[color:var(--primary-creme)]" />
+              <Info size={16} className="text-[color:var(--neutral-dark)]" />
             </button>
 
             {visible && (
-              <div className="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 z-50 bg-[color:var(--secondary-darkgreen)] text-[color:var(--primary-creme)] text-xs px-3 py-2 rounded shadow-md max-w-[70vw] w-max">
+              <div className="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 z-50 bg-[color:var(--secondary-darkblue)] text-white text-xs px-3 py-2 rounded shadow-md max-w-[70vw] w-max">
                 Ihre Dokumente und Daten werden DSGVO-konform behandelt.
               </div>
             )}
@@ -116,7 +116,7 @@ const ChatInput = ({
           disabled={!canSend}
           size="icon"
           variant="default"
-          className="rounded-xl bg-[color:var(--primary-yellow)] hover:bg-[color:var(--primary-hover)] text-[color:var(--neutral-dark)] disabled:opacity-50 h-10"
+          className="rounded-xl bg-[color:var(--primary-blue)] hover:bg-[color:var(--primary-hover)] text-white disabled:opacity-50 h-10"
           aria-label="Nachricht senden"
         >
           <Send size={18} />

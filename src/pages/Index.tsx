@@ -18,10 +18,10 @@ const Index = () => {
     return urlParams.get("sessionId") || "";
   };
 
-  // Function to get the variant from URL parameters, defaulting to "valuation"
+  // Function to get the variant from URL parameters, defaulting to "emobility"
   const getVariant = () => {
     const urlParams = new URLSearchParams(window.location.search);
-    return urlParams.get("variant") || "valuation";
+    return urlParams.get("variant") || "emobility";
   };
 
   const {
@@ -44,11 +44,11 @@ const Index = () => {
 
   return (
     <div className="min-h-screen flex flex-col relative">
-      {/* Full viewport background image */}
+      {/* Full viewport background with HEERO theme */}
       <div
-        className="fixed inset-0 z-0 bg-cover bg-center w-screen h-screen"
+        className="fixed inset-0 z-0 w-screen h-screen"
         style={{
-          backgroundImage: "url('/uploads/background-image.webp')",
+          background: "linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #dbeafe 100%)",
         }}
       />
 

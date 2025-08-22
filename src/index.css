@@ -8,19 +8,19 @@
 
 @layer base {
   :root {
-    --neutral-dark: #1c1c1c; /* Black */
-    --neutral-grey: #b3b0a6; /* Grey */
+    --neutral-dark: #1a1a1a; /* Dark Grey */
+    --neutral-grey: #6b7280; /* Medium Grey */
     --neutral-light: #ffffff; /* White */
-    --primary-yellow: #ffdb84; /* Yellow */
-    --primary-creme: #faf4e6; /* Creme */
-    --secondary-darkgreen: #262c2a; /* Dark Green */
-    --secondary-lightgreen: #e6efd3; /* Light Green */
-    --secondary-lightyellow: #fcecc9; /* Light Yellow */
-    --primary-hover: #f0c36d; /* Yellow Hover */
+    --primary-blue: #1e40af; /* HEERO Blue */
+    --primary-light: #f8fafc; /* Light Background */
+    --secondary-darkblue: #1e3a8a; /* Dark Blue */
+    --secondary-lightblue: #dbeafe; /* Light Blue */
+    --secondary-accent: #3b82f6; /* Accent Blue */
+    --primary-hover: #1d4ed8; /* Blue Hover */
     --transparent-50: rgba(255, 255, 255, 0.5); /* Transparent White 50%*/
     --transparent-20: rgba(255, 255, 255, 0.2); /* Transparent White 20%*/
     --transparent-10: rgba(255, 255, 255, 0.1); /* Transparent White 10% */
-    --dark-transparent: rgba(0, 0, 0, 0.3); /* Transparent White 10% */
+    --dark-transparent: rgba(0, 0, 0, 0.3); /* Transparent Black 30% */
     --radius: 0.5rem;
   }
 }
@@ -31,7 +31,7 @@
   }
 
   body {
-    background-color: var(--primary-creme);
+    background-color: var(--primary-light);
     color: var(--neutral-dark);
   }
 

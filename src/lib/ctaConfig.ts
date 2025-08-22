@@ -1,34 +1,35 @@
-// This variable holds the configuration for various call-to-action (CTA) links used in the application.
-// You can use this configuration to dynamically generate buttons or links that lead to specific actions, such as requesting an appraisal, scheduling a consultation, or connecting with a real estate agent.
+// This variable holds the configuration for various call-to-action (CTA) links used in the HEERO Motors application.
+// You can use this configuration to dynamically generate buttons or links that lead to specific actions, such as requesting a test drive, scheduling a consultation, or getting product information.
 // These are rendered in the MessageList component when the AI provides a response that includes a CTA type.
 // Adapt the type Message (ctaType) with the respective type from CTA_CONFIG to render the correct button.
 
 export const CTA_CONFIG = {
-  gutachten: {
-    label: "Gutachten anfragen",
-    url: "https://www.auctoa.de/lead-survey/gutachten",
+  probefahrt: {
+    label: "Probefahrt buchen",
+    url: "https://www.heero-motors.de/probefahrt",
   },
-  termin: {
-    label: "Gratis Expertenberatung erhalten",
-    url: "https://www.auctoa.de/lead-survey/termin",
+  beratung: {
+    label: "Kostenlose Beratung anfragen",
+    url: "https://www.heero-motors.de/kontakt",
   },
-  makler: {
-    label: "Mit Makler verbunden werden",
-    url: "https://www.auctoa.de/lead-survey/makler",
+  angebot: {
+    label: "Angebot anfordern",
+    url: "https://www.heero-motors.de/kontakt",
   },
-  finanzrechner: {
-    label: "Finanzierung berechnen",
-    url: "https://www.auctoa.de/lead-survey/finanzrechner",
+  produkte: {
+    label: "Alle Produkte entdecken",
+    url: "https://www.heero-motors.de/produkte",
   },
-  anwalt: {
-    label: "Juristische Beratung sichern",
-    url: "https://www.auctoa.de/lead-survey/anwalt",
+  ebusse: {
+    label: "eBusse ansehen",
+    url: "https://www.heero-motors.de/elektrische-busse",
   },
-  ibuyer: {
-    label: "Jetzt direkt verkaufen",
-    url: "https://www.auctoa.de/lead-survey/ibuyer",
+  etransporter: {
+    label: "eTransporter entdecken",
+    url: "https://www.heero-motors.de/elektrische-nutzfahrzeuge",
   },
-  sanierer: {
-    label: "Sanierungsexperten kontaktieren",
-    url: "https://www.auctoa.de/lead-survey/sanierung",
-}}  as const;
+  foerderung: {
+    label: "Förderung prüfen",
+    url: "https://www.heero-motors.de/loesungen",
+  },
+} as const;

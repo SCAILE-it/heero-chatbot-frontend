@@ -13,13 +13,13 @@ type ApiResponse = {
   pills?: string[]; // Optional pills to display in the chat
   sources?: { url: string; title: string }[]; // Optional sources for the message, each with a title and URL
   ctaType?:
-    | "gutachten"
-    | "termin"
-    | "makler"
-    | "finanzrechner"
-    | "anwalt"
-    | "ibuyer"
-    | "sanierer"; // Optional CTA type for specific message actions
+    | "probefahrt"
+    | "beratung"
+    | "angebot"
+    | "produkte"
+    | "ebusse"
+    | "etransporter"
+    | "foerderung"; // Optional CTA type for specific message actions
 };
 
 type UseChatStateProps = {
@@ -28,11 +28,11 @@ type UseChatStateProps = {
   apiUrl?: string; // URL of the API endpoint to send messages to
 };
 
-const STORAGE_KEY = "auctoa-chat-session"; // Key for localStorage to save chat session
+const STORAGE_KEY = "heero-chat-session"; // Key for localStorage to save chat session
 
 export function useChatState({
   initialMessages = [],
-  variant = "valuation",
+  variant = "emobility",
   apiUrl = import.meta.env.VITE_API_URL,
 }: UseChatStateProps = {}) {
   const [messages, setMessages] = useState<Message[]>(initialMessages);
