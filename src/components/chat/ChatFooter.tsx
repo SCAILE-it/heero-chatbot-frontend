@@ -9,14 +9,14 @@ const ChatFooter = () => {
           Antworten einer KI. Infos bitte prüfen.
         </p>
         <a
-          href="https://www.auctoa.de/legal/privacy-policy"
-          className="hover:text-[color:var(--primary-creme)]"
+          href="https://www.heero-motors.de/datenschutz"
+          className="hover:text-[color:var(--secondary-accent)]"
         >
           Datenschutz
         </a>
         <a
-          href="https://www.auctoa.de/legal/imprint"
-          className="hover:text-[color:var(--primary-creme)]"
+          href="https://www.heero-motors.de/impressum"
+          className="hover:text-[color:var(--secondary-accent)]"
         >
           Impressum
         </a>

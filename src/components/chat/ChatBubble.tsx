@@ -19,10 +19,10 @@ const ChatBubble = ({ isUser, children }: ChatBubbleProps) => { // Determines if
     >
       {/* Avatar only for AI */}
       {!isUser && (
-        <div className="w-8 h-8 mt-1 rounded-full bg-[color:var(--primary-creme)] flex items-center justify-center shrink-0 overflow-hidden">
+        <div className="w-8 h-8 mt-1 rounded-full bg-[color:var(--primary-blue)] flex items-center justify-center shrink-0 overflow-hidden p-1">
           <img
-            src="/uploads/auctoa-icon.png"
-            alt="Auctoa"
+            src="/heero-logo-clean.svg"
+            alt="HEERO"
             className="w-full h-full object-contain"
           />
         </div>

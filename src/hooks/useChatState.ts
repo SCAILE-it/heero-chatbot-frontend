@@ -43,7 +43,7 @@ export function useChatState({
 
   // Effect to prefill the input value from URL parameters
   // This allows the chat to be pre-populated with a message when the page is loaded
-  // If users enter something on the auctoa landing page, they will be redirected to the chat with a prefilled message
+  // If users enter something on the HEERO landing page, they will be redirected to the chat with a prefilled message
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
