@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useState } from "react";
-import { Send, Paperclip, Info } from "lucide-react";
+import { Send, Paperclip, Info, RotateCcw } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 type ChatInputProps = {
@@ -11,6 +11,7 @@ type ChatInputProps = {
   onFileButtonClick?: () => void;
   hasFiles?: boolean;
   fileBubbles?: React.ReactNode;
+  onResetChat?: () => void;
 };
 
 const ChatInput = ({
@@ -22,6 +23,7 @@ const ChatInput = ({
   onFileButtonClick,
   hasFiles = false,
   fileBubbles,
+  onResetChat,
 }: ChatInputProps) => {
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
@@ -92,6 +94,26 @@ const ChatInput = ({
               Dokumente hochladen
             </span>
           </Button>
+
+          {/* Reset Chat Button */}
+          {onResetChat && (
+            <Button
+              onClick={onResetChat}
+              size="default"
+              variant="ghost"
+              className="text-xs px-3 py-3 md:text-sm md:px-3 md:py-3 bg-[color:var(--transparent-10)] hover:bg-[color:var(--transparent-20)] rounded-lg h-10"
+              type="button"
+              aria-label="Chat zurücksetzen"
+            >
+              <RotateCcw
+                size={18}
+                className="text-[color:var(--primary-creme)]"
+              />
+              <span className="text-[color:var(--primary-creme)] text-sm">
+                Chat zurücksetzen
+              </span>
+            </Button>
+          )}
 
           <div className="relative inline-block">
             <button

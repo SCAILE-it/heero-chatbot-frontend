@@ -35,6 +35,7 @@ const Index = () => {
     handleFilesAdded,
     handleFileRemove,
     clearFiles,
+    resetChat,
   } = useChatState({
     variant: getVariant(),
     apiUrl: import.meta.env.VITE_API_URL, // API URL from environment variables
@@ -122,6 +123,7 @@ const Index = () => {
               onFileButtonClick={() => fileInputRef.current?.click()}
               hasFiles={files.length > 0}
               disabled={isTyping}
+              onResetChat={resetChat}
               fileBubbles={
                 <FileUploadBar
                   files={files}

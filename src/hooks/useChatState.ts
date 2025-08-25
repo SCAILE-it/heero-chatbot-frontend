@@ -1,7 +1,7 @@
 // This custom hook is used to manage chat state, including messages, typing status, files, and pills.
 // It handles sending messages to the API and saving/loading chat history from localStorage.
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { toast } from "@/hooks/use-toast";
 import { Message } from "@/components/chat/MessageList";
@@ -40,6 +40,7 @@ export function useChatState({
   const [files, setFiles] = useState<File[]>([]);
   const [pills, setPills] = useState<string[]>([]);
   const [inputValue, setInputValue] = useState("");
+  const abortControllerRef = useRef<AbortController | null>(null);
 
   // Effect to prefill the input value from URL parameters
   // This allows the chat to be pre-populated with a message when the page is loaded
@@ -100,6 +101,12 @@ export function useChatState({
 
       // Prepare the request data for the API
       try {
+        // Abort any existing request
+        if (abortControllerRef.current) {
+          abortControllerRef.current.abort();
+        }
+        abortControllerRef.current = new AbortController();
+
         const conversationId =
           localStorage.getItem("conversation-id") || crypto.randomUUID(); // Use existing conversation ID or generate a new one
         localStorage.setItem("conversation-id", conversationId); // Save conversation ID to localStorage
@@ -112,6 +119,7 @@ export function useChatState({
             "x-conversation-id": conversationId, // Include conversation ID in headers
           },
           body: JSON.stringify(requestData),
+          signal: abortControllerRef.current.signal,
         });
 
         if (!response.ok) {
@@ -137,11 +145,14 @@ export function useChatState({
         setPills(data.pills || []); // Set pills from API response
         setFiles([]); // Clear files after sending message
       } catch (error) {
-        toast({
-          title: "Error",
-          description: "Failed to send message. Please try again.",
-          variant: "destructive",
-        });
+        // Ignore AbortError when request was intentionally cancelled
+        if (error instanceof Error && error.name !== 'AbortError') {
+          toast({
+            title: "Error",
+            description: "Failed to send message. Please try again.",
+            variant: "destructive",
+          });
+        }
       } finally {
         setIsTyping(false);
       }
@@ -163,6 +174,33 @@ export function useChatState({
     setFiles([]);
   };
 
+  // Function to reset the entire chat state
+  const resetChat = useCallback(() => {
+    // Abort any running requests first
+    if (abortControllerRef.current) {
+      abortControllerRef.current.abort();
+      abortControllerRef.current = null;
+    }
+    
+    // Clear localStorage
+    localStorage.removeItem("conversation-id");
+    localStorage.removeItem(STORAGE_KEY);
+    
+    // Reset all state
+    setMessages([]);
+    setIsTyping(false);
+    setFiles([]);
+    setPills([]);
+    setInputValue("");
+  }, []);
+
+  // Auto-save messages when they change
+  useEffect(() => {
+    if (messages.length > 0 || pills.length > 0) {
+      saveSession(STORAGE_KEY, { messages, pills });
+    }
+  }, [messages, pills]);
+
   return {
     messages,
     isTyping,
@@ -174,5 +212,6 @@ export function useChatState({
     handleFilesAdded,
     handleFileRemove,
     clearFiles,
+    resetChat,
   };
 }
