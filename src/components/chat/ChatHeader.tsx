@@ -13,12 +13,11 @@ const ChatHeader = () => {
           rel="noopener noreferrer"
         >
           <div className="flex items-center gap-2">
-            <div className="text-lg md:text-xl font-bold text-white drop-shadow-lg">
-              HEERO
-            </div>
-            <div className="text-sm md:text-base text-white/80 font-medium drop-shadow-lg">
-              Motors
-            </div>
+            <img
+              src="/heero-label.png"
+              alt="HEERO Motors"
+              className="h-8 md:h-10 object-contain filter brightness-0 invert drop-shadow-lg"
+            />
           </div>
         </a>
       </div>

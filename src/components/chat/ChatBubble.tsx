@@ -21,9 +21,9 @@ const ChatBubble = ({ isUser, children }: ChatBubbleProps) => { // Determines if
       {!isUser && (
         <div className="w-8 h-8 mt-1 rounded-full bg-[color:var(--primary-blue)] flex items-center justify-center shrink-0 overflow-hidden p-1">
           <img
-            src="/heero-logo-clean.svg"
+            src="/heero-logo.png"
             alt="HEERO"
-            className="w-full h-full object-contain"
+            className="w-full h-full object-contain filter brightness-0 invert"
           />
         </div>
       )}
