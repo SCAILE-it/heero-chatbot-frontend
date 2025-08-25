@@ -44,15 +44,19 @@ const Index = () => {
 
   return (
     <div className="min-h-screen flex flex-col relative">
-      {/* HEERO Minibus background image */}
+      {/* HEERO Minibus background image - optimized WebP format */}
       <div
-        className="fixed inset-0 z-0 w-screen h-screen"
+        className="fixed inset-0 z-0 w-screen h-screen bg-gradient-to-br from-blue-900 to-blue-600 transition-opacity duration-1000"
         style={{
-          backgroundImage: `url('/uploads/heero-minibus-background.jpg')`,
+          backgroundImage: `
+            url('/uploads/heero-minibus-background.webp'),
+            url('/uploads/heero-minibus-background.jpg')
+          `,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
         }}
+        onError={(e) => console.log('Background image fallback used:', e)}
       />
       
       {/* Blue overlay for brand consistency and readability */}

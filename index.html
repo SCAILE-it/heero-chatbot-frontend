@@ -22,6 +22,11 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@heero_motors" />
     <meta name="twitter:image" content="/heero-logo.png" />
+    
+    <!-- Optimize background image loading - WebP format prioritized -->
+    <link rel="preload" as="image" href="/uploads/heero-minibus-background.webp" fetchpriority="high" />
+    <link rel="preload" as="image" href="/uploads/heero-minibus-background.jpg" fetchpriority="low" />
+    <link rel="dns-prefetch" href="/uploads/" />
   </head>
 
   <body>
