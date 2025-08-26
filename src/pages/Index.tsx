@@ -50,7 +50,7 @@ const Index = () => {
         className="fixed inset-0 z-0 w-screen h-screen bg-gradient-to-br from-blue-900 to-blue-600 transition-opacity duration-1000"
         style={{
           backgroundImage: `
-            url('/uploads/heero-minibus-background.webp'),
+            url('/uploads/heero-fridgebox.webp'),
             url('/uploads/heero-minibus-background.jpg')
           `,
           backgroundSize: 'cover',
