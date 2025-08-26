@@ -85,7 +85,7 @@ const Index = () => {
 
       {/* Content overlay */}
       <div className="relative z-10 flex flex-col min-h-screen">
-        <ChatHeader />
+        <ChatHeader onResetChat={resetChat} />
 
         {/* Main chat area */}
         <main
@@ -123,7 +123,6 @@ const Index = () => {
               onFileButtonClick={() => fileInputRef.current?.click()}
               hasFiles={files.length > 0}
               disabled={isTyping}
-              onResetChat={resetChat}
               fileBubbles={
                 <FileUploadBar
                   files={files}

@@ -20,30 +20,38 @@ export default {
 		},
 		extend: {
 			colors: {
+				// Design System Colors
+				'primary-300': 'var(--primary-300)',
+				'solar-spirit': 'var(--solar-spirit)',
+				'white': 'var(--white)',
+				'white-300': 'var(--white-300)',
+				'radial': 'var(--radial)',
+				
+				// Shadcn/UI Colors
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
 				primary: {
-					DEFAULT: 'hsl(var(--primary))',
-					foreground: 'hsl(var(--primary-foreground))'
+					DEFAULT: 'var(--primary-300)',
+					foreground: 'var(--white)'
 				},
 				secondary: {
-					DEFAULT: 'hsl(var(--secondary))',
-					foreground: 'hsl(var(--secondary-foreground))'
+					DEFAULT: 'var(--solar-spirit)',
+					foreground: 'var(--radial)'
 				},
 				destructive: {
 					DEFAULT: 'hsl(var(--destructive))',
 					foreground: 'hsl(var(--destructive-foreground))'
 				},
 				muted: {
-					DEFAULT: 'hsl(var(--muted))',
-					foreground: 'hsl(var(--muted-foreground))'
+					DEFAULT: 'var(--white-300)',
+					foreground: 'var(--radial)'
 				},
 				accent: {
-					DEFAULT: 'hsl(var(--accent))',
-					foreground: 'hsl(var(--accent-foreground))'
+					DEFAULT: 'var(--solar-spirit)',
+					foreground: 'var(--radial)'
 				},
 				popover: {
 					DEFAULT: 'hsl(var(--popover))',

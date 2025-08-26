@@ -8,15 +8,24 @@
 
 @layer base {
   :root {
-    --neutral-dark: #1a1a1a; /* Dark Grey */
+    /* Design System Colors */
+    --primary-300: #87CEEB; /* Primary - 300 (Light Blue) */
+    --solar-spirit: #F0A83C; /* Solar Spirit (Orange) */
+    --white: #FFFFFF; /* White */
+    --white-300: #F5F5F5; /* White - 300 (Light Gray) */
+    --radial: #000000; /* Radial (Black) */
+    
+    /* Legacy color mappings for compatibility */
+    --neutral-dark: #000000; /* Updated to Radial */
     --neutral-grey: #6b7280; /* Medium Grey */
     --neutral-light: #ffffff; /* White */
-    --primary-blue: #1e40af; /* HEERO Blue */
+    --primary-blue: #87CEEB; /* Updated to Primary-300 */
     --primary-light: #f8fafc; /* Light Background */
-    --secondary-darkblue: #1e3a8a; /* Dark Blue */
-    --secondary-lightblue: #dbeafe; /* Light Blue */
-    --secondary-accent: #3b82f6; /* Accent Blue */
-    --primary-hover: #1d4ed8; /* Blue Hover */
+    --secondary-darkblue: #000000; /* Updated to Radial */
+    --secondary-lightblue: #87CEEB; /* Updated to Primary-300 */
+    --secondary-accent: #F0A83C; /* Updated to Solar Spirit */
+    --primary-hover: #6BB6D6; /* Darker shade of Primary-300 */
+    --primary-creme: #F0A83C; /* Updated to Solar Spirit */
     --transparent-50: rgba(255, 255, 255, 0.5); /* Transparent White 50%*/
     --transparent-20: rgba(255, 255, 255, 0.2); /* Transparent White 20%*/
     --transparent-10: rgba(255, 255, 255, 0.1); /* Transparent White 10% */
