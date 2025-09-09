@@ -28,7 +28,7 @@ type UseChatStateProps = {
   apiUrl?: string; // URL of the API endpoint to send messages to
 };
 
-const STORAGE_KEY = "heero-chat-session"; // Key for localStorage to save chat session
+const STORAGE_KEY = "heero-emobility-chat-session"; // Key for localStorage to save chat session
 
 export function useChatState({
   initialMessages = [],
