@@ -47,6 +47,13 @@ export function useChatState({
   // If users enter something on the HEERO landing page, they will be redirected to the chat with a prefilled message
 
   useEffect(() => {
+    // One-time cleanup of old localStorage data
+    const oldKey = "heero-chat-session";
+    if (localStorage.getItem(oldKey)) {
+      console.log("🧹 Cleaning up old localStorage data");
+      localStorage.removeItem(oldKey);
+    }
+
     const params = new URLSearchParams(window.location.search);
     const prefill = params.get("prefill");
     const sessionData = loadSession(STORAGE_KEY);
@@ -57,11 +64,14 @@ export function useChatState({
 
     if (sessionData) {
       if (Array.isArray(sessionData.messages)) {
+        console.log("📝 Loading messages from localStorage:", sessionData.messages);
         setMessages(sessionData.messages);
       }
       if (Array.isArray(sessionData.pills)) {
         setPills(sessionData.pills);
       }
+    } else {
+      console.log("✅ No cached session data found - starting fresh");
     }
   }, []);
 
@@ -99,6 +109,10 @@ export function useChatState({
         // So when you link to https://api.example.com/chat?variant=makler, the variant will be "makler" and the n8n workflow will be triggered accordingly
       };
 
+      console.log("🚀 Sending to API:", apiUrl);
+      console.log("📤 Request Data:", requestData);
+      console.log("🎯 Variant being sent:", variant);
+
       // Prepare the request data for the API
       try {
         // Abort any existing request
@@ -110,6 +124,8 @@ export function useChatState({
         const conversationId =
           localStorage.getItem("conversation-id") || crypto.randomUUID(); // Use existing conversation ID or generate a new one
         localStorage.setItem("conversation-id", conversationId); // Save conversation ID to localStorage
+
+        console.log("🔑 Conversation ID:", conversationId);
 
         // Send the request to the API
         const response = await fetch(apiUrl, {
@@ -130,6 +146,9 @@ export function useChatState({
 
         const data: ApiResponse = await response.json(); // Parse the JSON response
 
+        console.log("🔍 API Response Data:", data);
+        console.log("🔍 Chat Response Content:", data.chatResponse);
+
         // Response from n8n
         const botMessage: Message = {
           id: uuidv4(),
@@ -139,7 +158,7 @@ export function useChatState({
           sources: data.sources || [], // Optional sources for the message
           ctaType: data.ctaType, // Optional CTA type for specific message actions
         };
-        console.log("Bot message:", botMessage);
+        console.log("🤖 Bot message created:", botMessage);
 
         setMessages((prev) => [...prev, botMessage]); // Add bot message to chat
         setPills(data.pills || []); // Set pills from API response
@@ -182,9 +201,12 @@ export function useChatState({
       abortControllerRef.current = null;
     }
     
-    // Clear localStorage
+    // Clear ALL localStorage keys (including old ones)
     localStorage.removeItem("conversation-id");
     localStorage.removeItem(STORAGE_KEY);
+    localStorage.removeItem("heero-chat-session"); // Clear old key too
+    
+    console.log("🧹 Cleared all localStorage data");
     
     // Reset all state
     setMessages([]);
